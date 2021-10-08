@@ -9,8 +9,10 @@ export const colors = {
   white: "#FFFFFF",
   background: "#F2F2F2",
   grey: "#9B9B9B",
+  greyInput: "#cccccc",
   redInformation: "#FF1744",
   redText: "#FF0068",
+  blocked: "#DADADA",
 };
 
 export const fonts = {
