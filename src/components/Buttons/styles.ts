@@ -8,7 +8,7 @@ interface buttonProps {
 }
 
 export const ButtonContainer = styled.button<buttonProps>`
-  margin-top: 5rem;
+  margin-top: 1rem;
   padding: 1.5rem 0;
   width: 100%;
   cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
@@ -22,7 +22,13 @@ export const ButtonContainer = styled.button<buttonProps>`
   border-radius: ${radius.sizeSm};
 
   color: ${({ disabled, outline }) =>
-    outline ? colors.purple : disabled ? colors.grey : colors.white};
+    outline
+      ? disabled
+        ? colors.grey
+        : colors.purple
+      : disabled
+      ? colors.grey
+      : colors.white};
   background: ${({ disabled, purple, outline }) =>
     outline
       ? colors.white
@@ -31,7 +37,12 @@ export const ButtonContainer = styled.button<buttonProps>`
       : purple
       ? colors.purple
       : colors.green};
-  border: ${({ outline }) => (outline ? `2px solid ${colors.purple}` : "none")};
+  border: ${({ disabled, outline }) =>
+    outline
+      ? disabled
+        ? `2px solid ${colors.blocked}`
+        : `2px solid ${colors.purple}`
+      : "none"};
 `;
 
 // ${({ open }) => (open ? "rotate(45deg)" : "rotate(0)")}

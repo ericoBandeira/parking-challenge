@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Entrance } from "../Entrance/Entrance";
+import { Exit } from "../Exit/Exit";
 import * as Styles from "./styles";
 
 export function HomePage() {
@@ -26,7 +27,7 @@ export function HomePage() {
         </Styles.StyledButton>
       </Styles.StyledChoice>
 
-      {entrance ? <Entrance /> : null}
+      {entrance ? <Entrance /> : <Exit />}
     </Styles.ContainerMenu>
   );
 }
