@@ -8,4 +8,10 @@ export const ContainerHeader = styled.div`
   justify-content: space-between;
   padding: 1rem 0rem;
   align-items: center;
+  svg {
+    margin-left: 0.5rem;
+  }
+  div {
+    margin-right: 0.5rem;
+  }
 `;
