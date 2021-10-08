@@ -1,13 +1,13 @@
-import React from "react";
+import * as Styles from "./styles";
 
 import { ReactComponent as Logo } from "../../assets/avatar_white.svg";
-import * as Styles from "./styles";
+import { MenuBurger } from "../MenuBurger/MenuBurger";
 
 export function Header() {
   return (
     <Styles.ContainerHeader>
       <Logo />
-      <h1>Menu</h1>
+      <MenuBurger />
     </Styles.ContainerHeader>
   );
 }

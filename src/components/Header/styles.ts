@@ -6,6 +6,6 @@ export const ContainerHeader = styled.div`
   width: 100vw;
   background-color: ${colors.blue};
   justify-content: space-between;
-  padding: 0 1rem;
+  padding: 1rem 0rem;
   align-items: center;
 `;
