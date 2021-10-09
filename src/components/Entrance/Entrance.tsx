@@ -24,7 +24,7 @@ export function Entrance() {
         plate: plate,
       });
       setConfirmation(true);
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      await new Promise((resolve) => setTimeout(resolve, 1500));
       setConfirmation(false);
       setConfirmLoad(false);
     } catch (err) {
