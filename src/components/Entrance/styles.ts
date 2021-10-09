@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors, radius } from "../../styles/global";
+import { colors, fonts, radius } from "../../styles/global";
 
 export const ContainerEntrance = styled.div`
   padding: 2rem 10rem;
@@ -9,4 +9,21 @@ export const ContainerEntrance = styled.div`
   @media (max-width: 768px) {
     padding: 2rem 1rem;
   }
+`;
+
+export const WaitConfirmation = styled.div`
+  text-align: center;
+  justify-content: center;
+  background-color: ${colors.white};
+  padding: 5rem 2rem;
+`;
+export const WaitText = styled.p`
+  font-style: normal;
+  font-weight: normal;
+  font-size: ${fonts.sizeSm};
+  line-height: 22px;
+
+  text-align: center;
+
+  color: ${colors.textModal};
 `;
