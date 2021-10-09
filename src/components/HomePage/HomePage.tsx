@@ -5,11 +5,8 @@ import { Exit } from "../Exit/Exit";
 import * as Styles from "./styles";
 
 export function HomePage() {
-  const {
-    entrance,
-    exit,
-    changeToEntrance,
-    changeToExit} = useContext(AppContext);
+  const { entrance, exit, changeToEntrance, changeToExit } =
+    useContext(AppContext);
 
   return (
     <Styles.ContainerMenu>

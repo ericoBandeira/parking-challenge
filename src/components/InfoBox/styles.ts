@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { colors, radius } from "../../styles/global";
 
 export const informationContainer = styled.div<{ info: boolean }>`
+  font-weight: bold;
   display: flex;
   margin-top: 1rem;
   width: 100%;

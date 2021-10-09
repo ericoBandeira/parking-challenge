@@ -1,7 +1,5 @@
-import styled, { createGlobalStyle } from 'styled-components';
-import { colors } from '../../styles/global';
-
-
+import styled, { createGlobalStyle } from "styled-components";
+import { colors, radius } from "../../styles/global";
 
 export const GlobalStyle = createGlobalStyle`
   .ReactModal__Overlay {
@@ -18,16 +16,18 @@ export const GlobalStyle = createGlobalStyle`
   }
 `;
 
+export const StyledContainer = styled.div`
+  padding: 1.5rem 1rem;
+`;
+
 export const StyledModal = styled.div`
+  text-align: center;
   background: ${colors.white};
-  border-radius: 1.6rem;
+  border-radius: ${radius.sizeSm};
   border: 1px solid ${colors.grey};
   bottom: auto;
   left: 50%;
-  margin-right: -50%;
   max-width: 500px;
-  outline: none;
-  overflow: hidden;
   padding: 0;
   position: absolute;
   right: auto;
@@ -39,5 +39,5 @@ export const StyledModal = styled.div`
 export const OverlayStyle = styled.div`
   position: fixed;
   inset: 0;
-  background-color: ${colors.black};
+  background-color: rgba(0, 0, 0, 0.51);
 `;

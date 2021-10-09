@@ -1,5 +1,6 @@
 export const colors = {
   blue: "#4DD0E1",
+  blueLight: "#00BCD4",
   yellow: "#F1B147",
   yellowLight: "#FFFBE6",
   purple: "#A769B2",
@@ -13,10 +14,12 @@ export const colors = {
   redInformation: "#FF1744",
   redText: "#FF0068",
   blocked: "#DADADA",
+  textModal: "#4A4A4A",
 };
 
 export const fonts = {
   font: "Open Sans",
+  sizeXXlg: "38px",
   sizeXlg: "28px",
   sizelg: "24px",
   sizeMd: "16px",

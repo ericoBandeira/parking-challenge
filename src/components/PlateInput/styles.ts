@@ -16,7 +16,7 @@ export const EntranceInputText = styled.p`
   }
 `;
 
-export const EntranceInput = styled.input`
+export const EntranceInput = styled.input<{ plateError: boolean }>`
   text-align: center;
   width: 100%;
   background: ${colors.yellowLight};
@@ -25,6 +25,6 @@ export const EntranceInput = styled.input`
   border-radius: ${radius.sizeSm};
   outline: 0;
   padding: 1.5rem 4rem;
-  color: ${colors.black};
+  color: ${({ plateError }) => (plateError ? colors.redText : colors.black)};
   font-size: ${fonts.sizelg};
 `;

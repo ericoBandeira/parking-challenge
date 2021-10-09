@@ -14,6 +14,7 @@ export function Entrance() {
         setEntrancePlate={setEntrancePlate}
         setExclamation={setExclamation}
         entracePlate={entracePlate}
+        plateError={!exclamation && entracePlate.length === 8}
       />
       {!exclamation && entracePlate.length === 8 ? (
         <InfoBox information={exclamation}>

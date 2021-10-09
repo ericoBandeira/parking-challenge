@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors, radius } from "../../styles/global";
+import { colors, fonts, radius } from "../../styles/global";
 
 export const ContainerExit = styled.div`
   padding: 2rem 10rem;
@@ -14,9 +14,8 @@ export const ContainerExit = styled.div`
 export const BackgroundNoneButton = styled.button`
   border: none;
   background: none;
-  margin-top: 1.5rem;
+  margin: 1.5rem 0 0rem 0;
   cursor: pointer;
-
   font-style: normal;
   font-weight: 600;
   font-size: 15px;
@@ -25,4 +24,25 @@ export const BackgroundNoneButton = styled.button`
   text-transform: uppercase;
 
   color: ${colors.blue};
+`;
+
+export const TitleModal = styled.p`
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  text-align: center;
+
+  color: ${colors.textModal};
+`;
+
+export const PlateText = styled.p`
+  margin: 0 0 1.5rem 0;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: ${fonts.sizeXXlg};
+  line-height: 52px;
+
+  color: ${colors.blueLight};
 `;
