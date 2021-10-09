@@ -12,7 +12,7 @@ export function MenuBurger() {
         <div />
         <div />
       </Styles.StyledBurger>
-      <RightMenu open={open} />
+      <RightMenu open={open} setOpen={setOpen}/>
     </>
   );
 }

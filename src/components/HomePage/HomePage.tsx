@@ -1,20 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { AppContext } from "../../contexts/routesContext";
 import { Entrance } from "../Entrance/Entrance";
 import { Exit } from "../Exit/Exit";
 import * as Styles from "./styles";
 
 export function HomePage() {
-  const [entrance, setEntrance] = useState(true);
-  const [exit, setExit] = useState(false);
-
-  function changeToEntrance() {
-    setEntrance(true);
-    setExit(false);
-  }
-  function changeToExit() {
-    setEntrance(false);
-    setExit(true);
-  }
+  const {
+    entrance,
+    exit,
+    changeToEntrance,
+    changeToExit} = useContext(AppContext);
 
   return (
     <Styles.ContainerMenu>

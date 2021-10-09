@@ -6,7 +6,11 @@ export const Menu = styled.ul<{ open: boolean }>`
   display: flex;
   flex-flow: row nowrap;
   margin: 0;
-  li {
+  button {
+    text-align: left;
+    border: none;
+    background: none;
+    cursor: pointer;
     padding: 18px 10px;
     font-style: normal;
     font-weight: 600;
@@ -15,6 +19,7 @@ export const Menu = styled.ul<{ open: boolean }>`
     color: #ffffff;
   }
   @media (max-width: 768px) {
+    margin-top: 3rem;
     flex-flow: column nowrap;
     background-color: ${colors.blue};
     position: fixed;
@@ -25,12 +30,14 @@ export const Menu = styled.ul<{ open: boolean }>`
     width: 100%;
     padding-top: 2rem;
     transition: transform 0.3s ease-in-out;
-    li {
+    button {
       font-style: normal;
       font-weight: 600;
       font-size: ${fonts.sizeMd};
       line-height: 22px;
       color: #ffffff;
+      width: fit-content;
+      margin: 0 0 1rem 0.5rem;
     }
   }
 `;
