@@ -11,11 +11,11 @@ export const ContainerExit = styled.div`
   }
 `;
 
-export const BackgroundNoneButton = styled.button`
+export const BackgroundNoneButton = styled.button<{ disabled: boolean }>`
   border: none;
   background: none;
   margin: 1.5rem 0 0rem 0;
-  cursor: pointer;
+  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
   font-style: normal;
   font-weight: 600;
   font-size: 15px;
@@ -23,26 +23,5 @@ export const BackgroundNoneButton = styled.button`
   text-align: center;
   text-transform: uppercase;
 
-  color: ${colors.blue};
-`;
-
-export const TitleModal = styled.p`
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 22px;
-  text-align: center;
-
-  color: ${colors.textModal};
-`;
-
-export const PlateText = styled.p`
-  margin: 0 0 1.5rem 0;
-  font-family: Open Sans;
-  font-style: normal;
-  font-weight: normal;
-  font-size: ${fonts.sizeXXlg};
-  line-height: 52px;
-
-  color: ${colors.blueLight};
+  color: ${({ disabled }) => (disabled ? colors.grey : colors.blue)};
 `;

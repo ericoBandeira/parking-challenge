@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AppContext } from "../../contexts/routesContext";
 import * as Styles from "./styles";
 
 interface inputProps {
@@ -14,6 +15,7 @@ export function PlateInput({
   setExclamation,
   plateError,
 }: inputProps) {
+  const { setPlate } = useContext(AppContext);
   const maskCEP = (value: string) => {
     var regexPlate = "[A-Z]{3}[0-9][0-9A-Z][0-9]{2}";
     setEntrancePlate(
@@ -24,6 +26,7 @@ export function PlateInput({
     );
     if (value.replace("-", "").match(regexPlate)?.length === 1) {
       setExclamation(true);
+      setPlate(value);
     } else {
       setExclamation(false);
     }

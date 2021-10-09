@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Buttons } from "../Buttons/Buttons";
 import { InfoBox } from "../InfoBox/InfoBox";
-import { Modal } from "../Modal/Modal";
+import { PaymentModal } from "../PaymentModal/PaymentModal";
 import { PlateInput } from "../PlateInput/PlateInput";
 import * as Styles from "./styles";
 
@@ -35,29 +35,11 @@ export function Exit() {
         <Buttons purple={true} disabled={!exclamation} outline={true}>
           Saída
         </Buttons>
-        <Styles.BackgroundNoneButton>Ver Histórico</Styles.BackgroundNoneButton>
-      </Styles.ContainerExit>
-
-      <Modal isOpen={modalOpen}>
-        <Styles.TitleModal>
-          Confima o pagamento <br />
-          da placa abaixo?
-        </Styles.TitleModal>
-
-        <Styles.PlateText>ABC-1234</Styles.PlateText>
-
-        <Buttons
-          purple={true}
-          disabled={false}
-          outline={false}
-          onClick={() => {}}
-        >
-          confirmar
-        </Buttons>
-        <Styles.BackgroundNoneButton onClick={() => setModalOpen(false)}>
-          Voltar
+        <Styles.BackgroundNoneButton disabled={!exclamation}>
+          Ver Histórico
         </Styles.BackgroundNoneButton>
-      </Modal>
+      </Styles.ContainerExit>
+      <PaymentModal isOpen={modalOpen} setModalOpen={setModalOpen} />
     </>
   );
 }
