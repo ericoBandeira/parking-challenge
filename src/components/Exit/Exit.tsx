@@ -60,7 +60,10 @@ export function Exit() {
         >
           Saída
         </Buttons>
-        <Styles.BackgroundNoneButton disabled={!exclamation}>
+        <Styles.BackgroundNoneButton
+          disabled={!exclamation}
+          onClick={() => (window.location.href = "/historico")}
+        >
           Ver Histórico
         </Styles.BackgroundNoneButton>
       </Styles.ContainerExit>

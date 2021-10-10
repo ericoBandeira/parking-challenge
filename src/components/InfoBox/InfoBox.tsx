@@ -1,4 +1,3 @@
-import { useState } from "react";
 import * as Styles from "./styles";
 import { ReactComponent as RedInformation } from "../../assets/ic_exclamation-mark.svg";
 

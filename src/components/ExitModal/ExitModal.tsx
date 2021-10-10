@@ -1,7 +1,6 @@
 import { useContext, useState } from "react";
 import { AppContext } from "../../contexts/routesContext";
 import { Buttons } from "../Buttons/Buttons";
-import { InfoBox } from "../InfoBox/InfoBox";
 import { Modal } from "../Modal/Modal";
 import * as Styles from "./styles";
 import { ReactComponent as Loading } from "../../assets/loading.svg";

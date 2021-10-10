@@ -1,7 +1,8 @@
-import React, { useContext, useState } from "react";
+import { useContext } from "react";
 import { AppContext } from "../../contexts/routesContext";
 import { Entrance } from "../Entrance/Entrance";
 import { Exit } from "../Exit/Exit";
+import { Header } from "../Header/Header";
 import * as Styles from "./styles";
 
 export function HomePage() {
@@ -9,17 +10,20 @@ export function HomePage() {
     useContext(AppContext);
 
   return (
-    <Styles.ContainerMenu>
-      <Styles.StyledChoice>
-        <Styles.StyledButton option={entrance} onClick={changeToEntrance}>
-          Entrada
-        </Styles.StyledButton>
-        <Styles.StyledButton option={exit} onClick={changeToExit}>
-          Saída
-        </Styles.StyledButton>
-      </Styles.StyledChoice>
+    <>
+      <Header />
+      <Styles.ContainerMenu>
+        <Styles.StyledChoice>
+          <Styles.StyledButton option={entrance} onClick={changeToEntrance}>
+            Entrada
+          </Styles.StyledButton>
+          <Styles.StyledButton option={exit} onClick={changeToExit}>
+            Saída
+          </Styles.StyledButton>
+        </Styles.StyledChoice>
 
-      {entrance ? <Entrance /> : <Exit />}
-    </Styles.ContainerMenu>
+        {entrance ? <Entrance /> : <Exit />}
+      </Styles.ContainerMenu>
+    </>
   );
 }

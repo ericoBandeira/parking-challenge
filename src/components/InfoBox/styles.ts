@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors, radius } from "../../styles/global";
+import { radius } from "../../styles/global";
 
 export const informationContainer = styled.div<{ info: boolean }>`
   font-weight: bold;

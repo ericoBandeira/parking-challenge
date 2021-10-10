@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors, fonts, radius } from "../../styles/global";
+import { colors, radius } from "../../styles/global";
 
 export const ContainerExit = styled.div`
   padding: 2rem 10rem;

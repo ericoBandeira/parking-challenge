@@ -8,23 +8,26 @@ interface Menu {
 }
 
 export function RightMenu({ open, setOpen }: Menu) {
-
-  const {
-    changeToEntrance,
-    changeToExit} = useContext(AppContext);
+  const { changeToEntrance, changeToExit } = useContext(AppContext);
 
   return (
     <Styles.Menu open={open}>
-      <button onClick={()=>{
-        changeToEntrance()
-        setOpen(!open)
-      }}>
+      <button
+        onClick={() => {
+          changeToEntrance();
+          window.location.href = "/";
+          setOpen(!open);
+        }}
+      >
         Entrada
       </button>
-      <button onClick={()=>{
-        changeToExit() 
-        setOpen(!open)
-      }}>
+      <button
+        onClick={() => {
+          changeToExit();
+          window.location.href = "/";
+          setOpen(!open);
+        }}
+      >
         Saída
       </button>
     </Styles.Menu>
