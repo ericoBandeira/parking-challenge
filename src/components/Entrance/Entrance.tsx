@@ -39,7 +39,7 @@ export function Entrance() {
     confirmation ? (
       <Styles.WaitConfirmation>
         <Confirm />
-        <Styles.WaitText>PAGO!</Styles.WaitText>
+        <Styles.WaitText>REGISTRADO!</Styles.WaitText>
       </Styles.WaitConfirmation>
     ) : (
       <Styles.WaitConfirmation>

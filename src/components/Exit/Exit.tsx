@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Buttons } from "../Buttons/Buttons";
+import { ExitModal } from "../ExitModal/ExitModal";
 import { InfoBox } from "../InfoBox/InfoBox";
 import { PaymentModal } from "../PaymentModal/PaymentModal";
 import { PlateInput } from "../PlateInput/PlateInput";
@@ -9,6 +10,10 @@ export function Exit() {
   const [entracePlate, setEntrancePlate] = useState("");
   const [exclamation, setExclamation] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
+  const [modalOpenExit, setModalOpenExit] = useState(false);
+  const [unfoundPlate, setunfoundPlate] = useState(false);
+  const [alreadyPaid, setAlreadyPaid] = useState(false);
+  const [unfoundPlateExit, setunfoundPlateExit] = useState(false);
 
   return (
     <>
@@ -24,6 +29,21 @@ export function Exit() {
             Por favor, insira uma placa válida!
           </InfoBox>
         ) : null}
+        {unfoundPlate ? (
+          <InfoBox information={!unfoundPlate}>
+            Placa não cadastrada ou já paga.
+          </InfoBox>
+        ) : null}
+        {unfoundPlateExit ? (
+          <InfoBox information={!unfoundPlateExit}>
+            Placa não cadastrada.
+          </InfoBox>
+        ) : null}
+        {alreadyPaid ? (
+          <InfoBox information={!alreadyPaid}>
+            Pagamento ainda não efetuado.
+          </InfoBox>
+        ) : null}
         <Buttons
           purple={true}
           disabled={!exclamation}
@@ -32,14 +52,29 @@ export function Exit() {
         >
           Pagamento
         </Buttons>
-        <Buttons purple={true} disabled={!exclamation} outline={true}>
+        <Buttons
+          purple={true}
+          disabled={!exclamation}
+          outline={true}
+          onClick={() => setModalOpenExit(true)}
+        >
           Saída
         </Buttons>
         <Styles.BackgroundNoneButton disabled={!exclamation}>
           Ver Histórico
         </Styles.BackgroundNoneButton>
       </Styles.ContainerExit>
-      <PaymentModal isOpen={modalOpen} setModalOpen={setModalOpen} />
+      <PaymentModal
+        isOpen={modalOpen}
+        setModalOpen={setModalOpen}
+        setunfoundPlate={setunfoundPlate}
+      />
+      <ExitModal
+        isOpen={modalOpenExit}
+        setModalOpen={setModalOpenExit}
+        setunfoundPlateExit={setunfoundPlateExit}
+        setAlreadyPaid={setAlreadyPaid}
+      />
     </>
   );
 }
