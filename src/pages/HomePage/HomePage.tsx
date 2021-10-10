@@ -1,8 +1,8 @@
 import { useContext } from "react";
+import { Entrance } from "../../components/Entrance/Entrance";
+import { Exit } from "../../components/Exit/Exit";
+import { Header } from "../../components/Header/Header";
 import { AppContext } from "../../contexts/routesContext";
-import { Entrance } from "../Entrance/Entrance";
-import { Exit } from "../Exit/Exit";
-import { Header } from "../Header/Header";
 import * as Styles from "./styles";
 
 export function HomePage() {
