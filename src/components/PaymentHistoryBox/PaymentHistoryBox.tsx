@@ -24,7 +24,7 @@ export function PaymentHistoryBox({ paid, time }: PlateHisoryProps) {
       </div>
       <div>
         <Styles.StyledTitle>Pagamento</Styles.StyledTitle>
-        <Styles.StyledBody>{paid ? "Pago" : "--"}</Styles.StyledBody>
+        <Styles.StyledBody>{paid ? "Pago" : "—"}</Styles.StyledBody>
       </div>
     </Styles.HistoryBox>
   );

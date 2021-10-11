@@ -1,7 +1,8 @@
 import { Header } from "../../components/Header/Header";
 import * as Styles from "./styles";
 import { ReactComponent as BackButton } from "../../assets/arrow_l.svg";
-import { useContext, useState } from "react";
+import { ReactComponent as Loading } from "../../assets/loading.svg";
+import { useContext, useEffect, useState } from "react";
 import { AppContext } from "../../contexts/routesContext";
 import { PaymentHistoryBox } from "../../components/PaymentHistoryBox/PaymentHistoryBox";
 import { apiParking } from "../../api/api";
@@ -15,14 +16,17 @@ interface PlateHisoryProps {
 }
 
 export function HistoryPage() {
+  const [Load, setLoad] = useState(true);
   const { plate, setChangePage } = useContext(AppContext);
   const [myHistoryArray, setMyHistoryArray] = useState<Array<PlateHisoryProps>>(
     []
   );
-
-  apiParking.get(plate).then(async (res) => {
-    setMyHistoryArray(res.data);
-  });
+  useEffect(() => {
+    apiParking.get(plate).then(async (res) => {
+      setMyHistoryArray(res.data);
+      setLoad(false);
+    });
+  }, []);
 
   return (
     <>
@@ -35,13 +39,22 @@ export function HistoryPage() {
           <Styles.HistoryTitle>Placa {plate}</Styles.HistoryTitle>
         </Styles.HistoryHeader>
 
-        {myHistoryArray.map((res) => (
-          <PaymentHistoryBox
-            key={res.reservation}
-            time={res.time}
-            paid={res.paid}
-          />
-        ))}
+        {Load ? (
+          <Styles.LoadContainer>
+            <Loading />
+            <Styles.LoadHistoryText>
+              Carregando Histórico
+            </Styles.LoadHistoryText>
+          </Styles.LoadContainer>
+        ) : (
+          myHistoryArray.map((res) => (
+            <PaymentHistoryBox
+              key={res.reservation}
+              time={res.time}
+              paid={res.paid}
+            />
+          ))
+        )}
       </Styles.ContainerHistory>
     </>
   );

@@ -30,3 +30,25 @@ export const HistoryTitle = styled.div`
 
   color: ${colors.blueLight};
 `;
+
+export const LoadHistoryText = styled.p`
+  font-style: normal;
+  font-weight: normal;
+  font-size: ${fonts.sizeSm};
+  line-height: 22px;
+
+  text-align: center;
+
+  color: ${colors.textModal};
+`;
+
+export const LoadContainer = styled.div`
+  padding: 2rem;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  svg {
+    width: 100%;
+    justify-content: center;
+  }
+`;
