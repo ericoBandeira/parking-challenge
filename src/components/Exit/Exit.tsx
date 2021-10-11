@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AppContext } from "../../contexts/routesContext";
 import { Buttons } from "../Buttons/Buttons";
 import { ExitModal } from "../ExitModal/ExitModal";
 import { InfoBox } from "../InfoBox/InfoBox";
@@ -15,6 +16,8 @@ export function Exit() {
   const [alreadyPaid, setAlreadyPaid] = useState(false);
   const [unfoundPlateExit, setunfoundPlateExit] = useState(false);
 
+  const { setChangePage } = useContext(AppContext);
+
   return (
     <>
       <Styles.ContainerExit>
@@ -24,6 +27,7 @@ export function Exit() {
           entracePlate={entracePlate}
           plateError={!exclamation && entracePlate.length === 8}
         />
+
         {!exclamation && entracePlate.length === 8 ? (
           <InfoBox information={exclamation}>
             Por favor, insira uma placa válida!
@@ -44,6 +48,7 @@ export function Exit() {
             Pagamento ainda não efetuado.
           </InfoBox>
         ) : null}
+
         <Buttons
           purple={true}
           disabled={!exclamation}
@@ -62,7 +67,7 @@ export function Exit() {
         </Buttons>
         <Styles.BackgroundNoneButton
           disabled={!exclamation}
-          onClick={() => (window.location.href = "/history")}
+          onClick={() => setChangePage(false)}
         >
           Ver Histórico
         </Styles.BackgroundNoneButton>

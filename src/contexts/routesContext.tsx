@@ -9,6 +9,8 @@ interface RoutesContextData {
   changeToExit: () => void;
   plate: string;
   setPlate: React.Dispatch<React.SetStateAction<string>>;
+  changePage: boolean;
+  setChangePage: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 interface AppProviderProps {
@@ -21,18 +23,25 @@ export function AppProvider({ children }: AppProviderProps) {
   const [entrance, setEntrance] = useState(true);
   const [exit, setExit] = useState(false);
   const [plate, setPlate] = useState("");
+  const [changePage, setChangePage] = useState(true);
 
   function changeToEntrance() {
+    setChangePage(true);
     setEntrance(true);
     setExit(false);
   }
+
   function changeToExit() {
+    setChangePage(true);
     setEntrance(false);
     setExit(true);
   }
+
   return (
     <AppContext.Provider
       value={{
+        changePage,
+        setChangePage,
         setPlate,
         plate,
         entrance,

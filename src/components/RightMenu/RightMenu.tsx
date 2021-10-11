@@ -16,17 +16,11 @@ export function RightMenu({ open, setOpen }: Menu) {
   async function goToEntrance() {
     changeToEntrance();
     setOpen(!open);
-    if (url === "history") {
-      window.location.href = "/";
-    }
   }
 
   async function goToExit() {
     changeToExit();
     setOpen(!open);
-    if (url === "history") {
-      window.location.href = "/";
-    }
   }
 
   return (
