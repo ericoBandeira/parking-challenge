@@ -6,6 +6,7 @@ import { useContext, useEffect, useState } from "react";
 import { AppContext } from "../../contexts/routesContext";
 import { PaymentHistoryBox } from "../../components/PaymentHistoryBox/PaymentHistoryBox";
 import { apiParking } from "../../api/api";
+import { RegisterDetail } from "../../components/RegisterDetail/RegisterDetail";
 
 interface PlateHisoryProps {
   left: boolean;
@@ -17,26 +18,38 @@ interface PlateHisoryProps {
 
 export function HistoryPage() {
   const [Load, setLoad] = useState(true);
-  const { plate, setChangePage } = useContext(AppContext);
+  const [historyData, setHistoryData] = useState(true);
+  const [currentTime, setCurrentTime] = useState<string>();
+  const [carLeft, setCarLeft] = useState<boolean>();
+  const [payment, setPayment] = useState<boolean>();
   const [myHistoryArray, setMyHistoryArray] = useState<Array<PlateHisoryProps>>(
     []
   );
+  const { plate, setChangePage } = useContext(AppContext);
+
   useEffect(() => {
     apiParking.get(plate).then(async (res) => {
       setMyHistoryArray(res.data);
       setLoad(false);
     });
   }, []);
-
   return (
     <>
       <Header />
       <Styles.ContainerHistory>
         <Styles.HistoryHeader>
-          <button onClick={() => setChangePage(true)}>
+          <button
+            onClick={
+              historyData
+                ? () => setChangePage(true)
+                : () => setHistoryData(true)
+            }
+          >
             <BackButton />
           </button>
-          <Styles.HistoryTitle>Placa {plate}</Styles.HistoryTitle>
+          {historyData ? (
+            <Styles.HistoryTitle>Placa {plate}</Styles.HistoryTitle>
+          ) : null}
         </Styles.HistoryHeader>
 
         {Load ? (
@@ -46,14 +59,22 @@ export function HistoryPage() {
               Carregando Histórico
             </Styles.LoadHistoryText>
           </Styles.LoadContainer>
-        ) : (
-          myHistoryArray.map((res) => (
+        ) : historyData ? (
+          myHistoryArray.reverse().map((res) => (
             <PaymentHistoryBox
               key={res.reservation}
               time={res.time}
               paid={res.paid}
+              onClick={() => {
+                setCurrentTime(res.time);
+                setPayment(res.paid);
+                setCarLeft(res.left);
+                setHistoryData(false);
+              }}
             />
           ))
+        ) : (
+          <RegisterDetail paid={payment} time={currentTime} left={carLeft} />
         )}
       </Styles.ContainerHistory>
     </>

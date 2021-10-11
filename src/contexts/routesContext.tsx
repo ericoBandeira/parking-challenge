@@ -3,13 +3,13 @@ import { createContext, useState, ReactNode } from "react";
 interface RoutesContextData {
   entrance: boolean;
   exit: boolean;
-  setEntrance: React.Dispatch<React.SetStateAction<boolean>>;
-  setExit: React.Dispatch<React.SetStateAction<boolean>>;
+  changePage: boolean;
+  plate: string;
   changeToEntrance: () => void;
   changeToExit: () => void;
-  plate: string;
   setPlate: React.Dispatch<React.SetStateAction<string>>;
-  changePage: boolean;
+  setEntrance: React.Dispatch<React.SetStateAction<boolean>>;
+  setExit: React.Dispatch<React.SetStateAction<boolean>>;
   setChangePage: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
@@ -40,16 +40,16 @@ export function AppProvider({ children }: AppProviderProps) {
   return (
     <AppContext.Provider
       value={{
-        changePage,
-        setChangePage,
-        setPlate,
-        plate,
         entrance,
         exit,
-        setEntrance,
-        setExit,
+        changePage,
+        plate,
         changeToEntrance,
         changeToExit,
+        setPlate,
+        setEntrance,
+        setExit,
+        setChangePage,
       }}
     >
       {children}
