@@ -2,10 +2,13 @@ import styled from "styled-components";
 import { colors, fonts, radius } from "../../styles/global";
 
 export const ContainerHistory = styled.div`
-  margin: 2.5rem 0.5rem;
+  margin: 8em 0.5rem;
   padding-bottom: 2.5rem;
   background-color: ${colors.white};
   border-radius: ${radius.sizeSm};
+  @media (max-width: 768px) {
+    margin: 6em 0.5rem;
+  }
 `;
 
 export const HistoryHeader = styled.div`
@@ -43,7 +46,7 @@ export const LoadHistoryText = styled.p`
 `;
 
 export const LoadContainer = styled.div`
-  padding: 2rem;
+  padding: 3rem;
   display: grid;
   justify-content: center;
   align-items: center;

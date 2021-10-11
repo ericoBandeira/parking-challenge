@@ -11,7 +11,7 @@ export const Menu = styled.ul<{ open: boolean }>`
     border: none;
     background: none;
     cursor: pointer;
-    padding: 18px 10px;
+    padding: 1rem 2rem;
     font-style: normal;
     font-weight: 600;
     font-size: ${fonts.sizeMd};

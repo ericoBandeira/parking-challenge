@@ -2,7 +2,10 @@ import styled from "styled-components";
 import { colors, radius } from "../../styles/global";
 
 export const ContainerMenu = styled.div`
-  margin: 2.5rem 0.5rem;
+  margin: 8em 0.5rem;
+  @media (max-width: 768px) {
+    margin: 6em 0.5rem;
+  }
 `;
 
 export const StyledChoice = styled.div`
