@@ -9,7 +9,7 @@ function App() {
         <Route exact path="/">
           <HomePage />
         </Route>
-        <Route exact path="/historico">
+        <Route exact path="/history">
           <HistoryPage />
         </Route>
       </Switch>

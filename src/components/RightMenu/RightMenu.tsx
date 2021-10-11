@@ -8,8 +8,7 @@ interface Menu {
 }
 
 export function RightMenu({ open, setOpen }: Menu) {
-  const { changeToEntrance, changeToExit, exit, entrance } =
-    useContext(AppContext);
+  const { changeToEntrance, changeToExit } = useContext(AppContext);
 
   const url =
     window.location.href.split("/")[window.location.href.split("/").length - 1];
@@ -17,7 +16,7 @@ export function RightMenu({ open, setOpen }: Menu) {
   async function goToEntrance() {
     changeToEntrance();
     setOpen(!open);
-    if (url === "historico") {
+    if (url === "history") {
       window.location.href = "/";
     }
   }
@@ -25,7 +24,7 @@ export function RightMenu({ open, setOpen }: Menu) {
   async function goToExit() {
     changeToExit();
     setOpen(!open);
-    if (url === "historico") {
+    if (url === "history") {
       window.location.href = "/";
     }
   }
