@@ -3,6 +3,7 @@ import { colors, fonts, radius } from "../../styles/global";
 
 export const ContainerHistory = styled.div`
   margin: 2.5rem 0.5rem;
+  padding-bottom: 2.5rem;
   background-color: ${colors.white};
   border-radius: ${radius.sizeSm};
 `;

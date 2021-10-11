@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { AppContext } from "./contexts/routesContext";
 import { HistoryPage } from "./pages/HistoryPage/HistoryPage";
 import { HomePage } from "./pages/HomePage/HomePage";

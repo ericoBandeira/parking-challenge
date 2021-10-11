@@ -15,6 +15,7 @@ export const colors = {
   redText: "#FF0068",
   blocked: "#DADADA",
   textModal: "#4A4A4A",
+  borderBox: "#e4e3e3",
 };
 
 export const fonts = {

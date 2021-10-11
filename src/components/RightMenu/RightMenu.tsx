@@ -10,9 +10,6 @@ interface Menu {
 export function RightMenu({ open, setOpen }: Menu) {
   const { changeToEntrance, changeToExit } = useContext(AppContext);
 
-  const url =
-    window.location.href.split("/")[window.location.href.split("/").length - 1];
-
   async function goToEntrance() {
     changeToEntrance();
     setOpen(!open);
