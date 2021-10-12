@@ -1,13 +1,17 @@
+import { useContext } from "react";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Redirect,
 } from "react-router-dom";
+import { AppContext } from "./contexts/routesContext";
 import { HistoryPage } from "./pages/HistoryPage/HistoryPage";
 import { HomePage } from "./pages/HomePage/HomePage";
 
 function App() {
+  const { plate } = useContext(AppContext);
+
   return (
     <Router>
       <Switch>
@@ -17,9 +21,13 @@ function App() {
         <Route exact path="/exit">
           <HomePage entrance={false} />
         </Route>
-        <Route exact path="/history">
-          <HistoryPage />
-        </Route>
+        {plate ? (
+          <Route exact path="/history">
+            <HistoryPage />
+          </Route>
+        ) : (
+          <Redirect to="/exit" />
+        )}
         <Route exact path="*" render={() => <Redirect to="/entrance" />} />
       </Switch>
     </Router>

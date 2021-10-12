@@ -26,7 +26,7 @@ export function HistoryPage() {
   const [myHistoryArray, setMyHistoryArray] = useState<Array<PlateHisoryProps>>(
     []
   );
-  const { plate, setChangePage } = useContext(AppContext);
+  const { plate } = useContext(AppContext);
 
   useEffect(() => {
     apiParking.get(plate).then(async (res) => {
