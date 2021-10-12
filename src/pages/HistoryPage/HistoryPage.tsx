@@ -7,6 +7,7 @@ import { AppContext } from "../../contexts/routesContext";
 import { PaymentHistoryBox } from "../../components/PaymentHistoryBox/PaymentHistoryBox";
 import { apiParking } from "../../api/api";
 import { RegisterDetail } from "../../components/RegisterDetail/RegisterDetail";
+import { Link } from "react-router-dom";
 
 interface PlateHisoryProps {
   left: boolean;
@@ -39,15 +40,15 @@ export function HistoryPage() {
       <Header />
       <Styles.ContainerHistory>
         <Styles.HistoryHeader>
-          <button
-            onClick={
-              historyData
-                ? () => setChangePage(true)
-                : () => setHistoryData(true)
-            }
-          >
-            <BackButton />
-          </button>
+          {historyData ? (
+            <Link to="/exit">
+              <BackButton />
+            </Link>
+          ) : (
+            <button onClick={() => setHistoryData(true)}>
+              <BackButton />
+            </button>
+          )}
           {historyData ? (
             <Styles.HistoryTitle>Placa {plate}</Styles.HistoryTitle>
           ) : null}

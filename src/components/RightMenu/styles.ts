@@ -6,10 +6,9 @@ export const Menu = styled.ul<{ open: boolean }>`
   display: flex;
   flex-flow: row nowrap;
   margin: 0;
-  button {
+  a {
+    text-decoration: none;
     text-align: left;
-    border: none;
-    background: none;
     cursor: pointer;
     padding: 1rem 2rem;
     font-style: normal;
@@ -30,7 +29,7 @@ export const Menu = styled.ul<{ open: boolean }>`
     width: 100%;
     padding-top: 2rem;
     transition: transform 0.3s ease-in-out;
-    button {
+    a {
       font-style: normal;
       font-weight: 600;
       font-size: ${fonts.sizeMd};

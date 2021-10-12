@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { colors, radius } from "../../styles/global";
 
@@ -13,7 +14,8 @@ export const StyledChoice = styled.div`
   justify-content: center;
 `;
 
-export const StyledButton = styled.button<{ option: boolean }>`
+export const StyledButton = styled(Link)<{ option: boolean }>`
+  text-decoration: none;
   cursor: pointer;
   border-radius: ${radius.sizeSm} ${radius.sizeSm} 0px 0px;
   width: 100%;

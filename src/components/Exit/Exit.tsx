@@ -1,5 +1,4 @@
-import { useContext, useState } from "react";
-import { AppContext } from "../../contexts/routesContext";
+import { useState } from "react";
 import { Buttons } from "../Buttons/Buttons";
 import { ExitModal } from "../ExitModal/ExitModal";
 import { InfoBox } from "../InfoBox/InfoBox";
@@ -63,12 +62,11 @@ export function Exit() {
         >
           Saída
         </Buttons>
-        <Styles.BackgroundNoneButton
-          disabled={!exclamation}
-          onClick={() => (window.location.href = "/history")}
-        >
-          Ver Histórico
-        </Styles.BackgroundNoneButton>
+        <div>
+          <Styles.BackgroundNoneButton disabled={!exclamation} to="/history">
+            Ver Histórico
+          </Styles.BackgroundNoneButton>
+        </div>
       </Styles.ContainerExit>
       <PaymentModal
         isOpen={modalOpen}

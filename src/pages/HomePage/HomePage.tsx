@@ -1,8 +1,6 @@
-import { useContext } from "react";
 import { Entrance } from "../../components/Entrance/Entrance";
 import { Exit } from "../../components/Exit/Exit";
 import { Header } from "../../components/Header/Header";
-import { AppContext } from "../../contexts/routesContext";
 import * as Styles from "./styles";
 
 interface homePageProps {
@@ -15,20 +13,10 @@ export function HomePage({ entrance }: homePageProps) {
       <Header />
       <Styles.ContainerMenu>
         <Styles.StyledChoice>
-          <Styles.StyledButton
-            option={entrance}
-            onClick={() => {
-              window.location.href = "/entrance";
-            }}
-          >
+          <Styles.StyledButton to="/entrance" option={entrance}>
             Entrada
           </Styles.StyledButton>
-          <Styles.StyledButton
-            option={!entrance}
-            onClick={() => {
-              window.location.href = "/exit";
-            }}
-          >
+          <Styles.StyledButton to="/exit" option={!entrance}>
             Saída
           </Styles.StyledButton>
         </Styles.StyledChoice>
