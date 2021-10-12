@@ -32,7 +32,7 @@ export function RegisterDetail({ paid, time, left }: detailProps) {
               .replace("seconds", "s")}
       </Styles.NormalLabel>
       <Styles.LabelTitle>Pagamento</Styles.LabelTitle>
-      <Styles.NormalLabel>{paid ? "PAGO" : "—"}</Styles.NormalLabel>
+      <Styles.NormalLabel>{paid ? "Pago" : "—"}</Styles.NormalLabel>
     </Styles.ContainerDetail>
   );
 }
