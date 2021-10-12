@@ -1,5 +1,4 @@
-import { useContext, useState } from "react";
-import { AppContext } from "../../contexts/routesContext";
+import { useState } from "react";
 import { Buttons } from "../Buttons/Buttons";
 import { ExitModal } from "../ExitModal/ExitModal";
 import { InfoBox } from "../InfoBox/InfoBox";
@@ -15,8 +14,6 @@ export function Exit() {
   const [unfoundPlate, setunfoundPlate] = useState(false);
   const [alreadyPaid, setAlreadyPaid] = useState(false);
   const [unfoundPlateExit, setunfoundPlateExit] = useState(false);
-
-  const { setChangePage } = useContext(AppContext);
 
   return (
     <>
@@ -65,12 +62,11 @@ export function Exit() {
         >
           Saída
         </Buttons>
-        <Styles.BackgroundNoneButton
-          disabled={!exclamation}
-          onClick={() => setChangePage(false)}
-        >
-          Ver Histórico
-        </Styles.BackgroundNoneButton>
+        <div>
+          <Styles.BackgroundNoneButton disabled={!exclamation} to="/history">
+            Ver Histórico
+          </Styles.BackgroundNoneButton>
+        </div>
       </Styles.ContainerExit>
       <PaymentModal
         isOpen={modalOpen}

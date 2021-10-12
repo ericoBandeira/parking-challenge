@@ -1,5 +1,4 @@
-import { useContext } from "react";
-import { AppContext } from "../../contexts/routesContext";
+import { Link } from "react-router-dom";
 import * as Styles from "./styles";
 
 interface Menu {
@@ -8,22 +7,10 @@ interface Menu {
 }
 
 export function RightMenu({ open, setOpen }: Menu) {
-  const { changeToEntrance, changeToExit } = useContext(AppContext);
-
-  async function goToEntrance() {
-    changeToEntrance();
-    setOpen(!open);
-  }
-
-  async function goToExit() {
-    changeToExit();
-    setOpen(!open);
-  }
-
   return (
     <Styles.Menu open={open}>
-      <button onClick={goToEntrance}>Entrada</button>
-      <button onClick={goToExit}>Saída</button>
+      <Link to="/entrance">Entrada</Link>
+      <Link to="/exit">Saída</Link>
     </Styles.Menu>
   );
 }

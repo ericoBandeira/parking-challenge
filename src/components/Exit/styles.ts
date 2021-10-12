@@ -1,5 +1,6 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { colors, radius } from "../../styles/global";
+import { colors, fonts, radius } from "../../styles/global";
 
 export const ContainerExit = styled.div`
   padding: 2rem 10rem;
@@ -9,16 +10,17 @@ export const ContainerExit = styled.div`
   @media (max-width: 768px) {
     padding: 2rem 1rem;
   }
+  div {
+    margin-top: 1rem;
+  }
 `;
 
-export const BackgroundNoneButton = styled.button<{ disabled: boolean }>`
-  border: none;
-  background: none;
-  margin: 1.5rem 0 0rem 0;
+export const BackgroundNoneButton = styled(Link)<{ disabled: boolean }>`
+  text-decoration: none;
   cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
   font-style: normal;
   font-weight: 600;
-  font-size: 15px;
+  font-size: ${fonts.sizeMd};
   line-height: 20px;
   text-align: center;
   text-transform: uppercase;
