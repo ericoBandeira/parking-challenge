@@ -16,8 +16,6 @@ export function Exit() {
   const [alreadyPaid, setAlreadyPaid] = useState(false);
   const [unfoundPlateExit, setunfoundPlateExit] = useState(false);
 
-  const { setChangePage } = useContext(AppContext);
-
   return (
     <>
       <Styles.ContainerExit>
@@ -67,7 +65,7 @@ export function Exit() {
         </Buttons>
         <Styles.BackgroundNoneButton
           disabled={!exclamation}
-          onClick={() => setChangePage(false)}
+          onClick={() => (window.location.href = "/history")}
         >
           Ver Histórico
         </Styles.BackgroundNoneButton>

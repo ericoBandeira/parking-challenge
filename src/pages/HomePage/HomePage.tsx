@@ -5,19 +5,30 @@ import { Header } from "../../components/Header/Header";
 import { AppContext } from "../../contexts/routesContext";
 import * as Styles from "./styles";
 
-export function HomePage() {
-  const { entrance, exit, changeToEntrance, changeToExit } =
-    useContext(AppContext);
+interface homePageProps {
+  entrance: boolean;
+}
 
+export function HomePage({ entrance }: homePageProps) {
   return (
     <>
       <Header />
       <Styles.ContainerMenu>
         <Styles.StyledChoice>
-          <Styles.StyledButton option={entrance} onClick={changeToEntrance}>
+          <Styles.StyledButton
+            option={entrance}
+            onClick={() => {
+              window.location.href = "/entrance";
+            }}
+          >
             Entrada
           </Styles.StyledButton>
-          <Styles.StyledButton option={exit} onClick={changeToExit}>
+          <Styles.StyledButton
+            option={!entrance}
+            onClick={() => {
+              window.location.href = "/exit";
+            }}
+          >
             Saída
           </Styles.StyledButton>
         </Styles.StyledChoice>
