@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors, fonts, radius } from "../../styles/global";
+import { colors, fonts } from "../../styles/global";
 
 export const ContainerDetail = styled.div`
   margin-left: 2rem;

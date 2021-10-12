@@ -32,7 +32,8 @@ export function HistoryPage() {
       setMyHistoryArray(res.data);
       setLoad(false);
     });
-  }, []);
+  }, [plate]);
+
   return (
     <>
       <Header />
