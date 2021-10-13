@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { RightMenu } from "../RightMenu/RightMenu";
 import * as Styles from "./styles";
 
