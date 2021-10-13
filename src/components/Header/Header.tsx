@@ -6,7 +6,7 @@ import { MenuBurger } from "../MenuBurger/MenuBurger";
 export function Header() {
   return (
     <Styles.ContainerHeader>
-      <Logo />
+      <Logo title="Logo" />
       <MenuBurger />
     </Styles.ContainerHeader>
   );

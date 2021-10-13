@@ -7,7 +7,11 @@ export function MenuBurger() {
 
   return (
     <>
-      <Styles.StyledBurger open={open} onClick={() => setOpen(!open)}>
+      <Styles.StyledBurger
+        title={window.innerWidth < 768 ? "Burger" : "Not Burger"}
+        open={open}
+        onClick={() => setOpen(!open)}
+      >
         <div />
         <div />
         <div />
