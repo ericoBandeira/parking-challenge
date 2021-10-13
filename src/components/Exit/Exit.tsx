@@ -63,7 +63,10 @@ export function Exit() {
           Saída
         </Buttons>
         <div>
-          <Styles.BackgroundNoneButton disabled={!exclamation} to="/history">
+          <Styles.BackgroundNoneButton
+            disabled={!exclamation}
+            to={!exclamation ? "/exit" : "/history"}
+          >
             Ver Histórico
           </Styles.BackgroundNoneButton>
         </div>
