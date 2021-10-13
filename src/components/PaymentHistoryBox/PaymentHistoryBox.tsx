@@ -19,7 +19,8 @@ export function PaymentHistoryBox({ paid, time, onClick }: PlateHisoryProps) {
               .replace("hours", "h")
               .replace("days", "dias")
               .replace("years", "anos")
-              .replace("seconds", "s")}
+              .replace("seconds", "s")
+              .replace(" ", "")}
           </Styles.StyledBody>
         </div>
         <div>
