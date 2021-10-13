@@ -34,7 +34,6 @@ export function ExitModal({
       setConfirmLoad(false);
       setModalOpen(false);
     } catch (err: any) {
-      console.log(err.response.statusText);
       if (err.response.statusText === "Not Found") {
         setConfirmLoad(false);
         setModalOpen(false);
