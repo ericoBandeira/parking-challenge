@@ -62,14 +62,14 @@ export function Exit() {
         >
           Saída
         </Buttons>
-        <div>
+        <Styles.StylesLink disabled={!exclamation}>
           <Styles.BackgroundNoneButton
             disabled={!exclamation}
             to={!exclamation ? "/exit" : "/history"}
           >
             Ver Histórico
           </Styles.BackgroundNoneButton>
-        </div>
+        </Styles.StylesLink>
       </Styles.ContainerExit>
       <PaymentModal
         isOpen={modalOpen}

@@ -17,7 +17,7 @@ export const ContainerExit = styled.div`
 
 export const BackgroundNoneButton = styled(Link)<{ disabled: boolean }>`
   text-decoration: none;
-  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
+  pointer-events: ${({ disabled }) => disabled && "none"};
   font-style: normal;
   font-weight: 600;
   font-size: ${fonts.sizeMd};
@@ -26,4 +26,8 @@ export const BackgroundNoneButton = styled(Link)<{ disabled: boolean }>`
   text-transform: uppercase;
 
   color: ${({ disabled }) => (disabled ? colors.grey : colors.blue)};
+`;
+
+export const StylesLink = styled.div<{ disabled: boolean }>`
+  cursor: ${({ disabled }) => disabled && "not-allowed"};
 `;
