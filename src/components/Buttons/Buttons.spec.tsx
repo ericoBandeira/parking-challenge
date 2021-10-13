@@ -1,12 +1,20 @@
 import { render } from "@testing-library/react";
+import ReactModal from "react-modal";
 import { Buttons } from "./Buttons";
 
-test("buttons really click and do your functions", () => {
-  const { debug } = render(
-    <Buttons purple={false} outline={false} disabled={false} onClick={() => {}}>
+test("botão renderiza corretamente", () => {
+  const { getByText } = render(
+    <Buttons
+      purple={false}
+      outline={false}
+      disabled={false}
+      onClick={() => {
+        ReactModal.setAppElement("#root");
+      }}
+    >
       Button
     </Buttons>
   );
 
-  debug();
+  expect(getByText("Button")).toBeInTheDocument();
 });
