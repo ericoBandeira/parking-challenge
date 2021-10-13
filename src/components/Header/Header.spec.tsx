@@ -23,6 +23,17 @@ test("Renderizando a imagem do Header", () => {
   expect(screen.getByTitle("Logo"));
 });
 
+test("Renderizando a imagem do Header Mobile", () => {
+  global.innerWidth = 500;
+  render(
+    <Router>
+      <Header />
+    </Router>
+  );
+
+  expect(screen.getByTitle("Mobile Logo"));
+});
+
 test("Menu hamburguer aperece", () => {
   global.innerWidth = 500;
   render(
@@ -30,7 +41,6 @@ test("Menu hamburguer aperece", () => {
       <Header />
     </Router>
   );
-  screen.debug();
   expect(screen.getByTitle("Burger"));
 });
 
@@ -41,6 +51,5 @@ test("Menu hamburguer aperece", () => {
       <Header />
     </Router>
   );
-  screen.debug();
   expect(screen.getByTitle("Not Burger"));
 });

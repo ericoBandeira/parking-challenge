@@ -1,5 +1,6 @@
 import * as Styles from "./styles";
 import { ReactComponent as RedInformation } from "../../assets/ic_exclamation-mark.svg";
+import { ReactComponent as GreenInformation } from "../../assets/ic.svg";
 
 interface informationProps {
   information: boolean;
@@ -9,7 +10,7 @@ interface informationProps {
 export function InfoBox({ information, children }: informationProps) {
   return (
     <Styles.informationContainer info={information}>
-      {information ? null : <RedInformation />}
+      {information ? <GreenInformation /> : <RedInformation />}
       {children}
     </Styles.informationContainer>
   );
