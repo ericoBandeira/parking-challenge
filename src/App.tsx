@@ -21,12 +21,10 @@ function App() {
         <Route exact path="/exit">
           <HomePage entrance={false} />
         </Route>
-        {plate ? (
+        {plate && (
           <Route exact path="/history">
             <HistoryPage />
           </Route>
-        ) : (
-          <Redirect to="/exit" />
         )}
         <Route exact path="*" render={() => <Redirect to="/entrance" />} />
       </Switch>
