@@ -62,9 +62,9 @@ export function HistoryPage() {
             </Styles.LoadHistoryText>
           </Styles.LoadContainer>
         ) : historyData ? (
-          myHistoryArray.reverse().map((res) => (
+          myHistoryArray.reverse().map((res, indice) => (
             <PaymentHistoryBox
-              key={res.reservation}
+              key={indice}
               time={res.time}
               paid={res.paid}
               onClick={() => {

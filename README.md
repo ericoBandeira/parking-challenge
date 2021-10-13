@@ -67,3 +67,9 @@ ou
 - Clique "p" para filtrar o nome de um arquivo por padrão regex;
 - Clique "q" para filtrar o teste por padrão regex;
 - Clique Enter para rodar um teste.
+
+## Dificuldades:
+
+1. Na parte de testes tive dificuldade ao testar componentes do tipo Modal, tentei resolver simulando uma modal com ` jest.mock(()=>{})` mas o mesmo não funcionou.
+
+2. No map que usei para listar o histórico na página de saída, tive dificuldade de achar um parâmetro para usar de key, pois o parâmetro "reservation" da api as vezes se repetia para a mesma placa. Então usei a posição do vetor como key do map.
